@@ -9,8 +9,7 @@ import static properties.Properties.NUMBER_OF_ANTS;
 import static properties.Properties.NUMBER_OF_BUGS;
 
 /**
- * [Singleton Pattern]
- * Container of organisms.
+ * [Singleton Pattern] Container of organisms.
  */
 public class Organisms extends ArrayList<Organism> {
   /**
@@ -27,15 +26,15 @@ public class Organisms extends ArrayList<Organism> {
     /* Single instance of random locations. */
     RandomLocations random_locations = RandomLocations.getInstance();
     for (int i = 0; i < NUMBER_OF_BUGS; ++i) {
-            /*
-                Using factory class to produce bugs.
-            */
+      /*
+       * Using factory class to produce bugs.
+       */
       this.add(organism_factory.getOrganism(OrganismType.BUG, random_locations.getArray()[i]));
     }
     for (int i = 0; i < NUMBER_OF_ANTS; ++i) {
-            /*
-                Using factory class to produce ants.
-            */
+      /*
+       * Using factory class to produce ants.
+       */
       this.add(organism_factory.getOrganism(OrganismType.ANT, random_locations.getArray()[i + NUMBER_OF_BUGS]));
     }
   }
@@ -54,9 +53,9 @@ public class Organisms extends ArrayList<Organism> {
     /* Copy of Organisms to do edits on. */
     ArrayList<Organism> copy_of_organisms = new ArrayList<>(this);
     for (Organism organism : this) {
-            /*
-                Polymorphic call of move in Organism.
-             */
+      /*
+       * Polymorphic call of move in Organism.
+       */
       organism.move(WorldController.getInstance().getWorld(), copy_of_organisms);
     }
     /* Clearing the unedited Organisms then adding the edited list. */

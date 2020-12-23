@@ -10,8 +10,7 @@ import java.io.IOException;
 import static properties.Properties.CELL_LENGTH;
 
 /**
- * [Factory Pattern]
- * Parent class of every Image.
+ * [Factory Pattern] Parent class of every Image.
  */
 public abstract class Image extends ImageIcon {
   /**
@@ -24,7 +23,8 @@ public abstract class Image extends ImageIcon {
   /**
    * Returns resized image after coloring it.
    */
-  private ImageIcon resizeColoredImage(File file, int image_r, int image_g, int image_b, double divider) throws IOException {
+  private ImageIcon resizeColoredImage(File file, int image_r, int image_g, int image_b, double divider)
+      throws IOException {
     /* The imageIcon to edit then return. */
     ImageIcon icon = new ImageIcon();
     /* Loading and coloring the image. */
@@ -50,9 +50,9 @@ public abstract class Image extends ImageIcon {
     int height = image.getHeight();
     /* Raster to allow us editing pixels. */
     WritableRaster raster = image.getRaster();
-        /*
-            Iterating over every pixel and editing it, to get full colored image.
-         */
+    /*
+     * Iterating over every pixel and editing it, to get full colored image.
+     */
     /* For every pixel in the image, */
     for (int y = 0; y < height; y++) {
       for (int x = 0; x < width; x++) {

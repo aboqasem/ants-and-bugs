@@ -24,12 +24,15 @@ public class Location {
   }
 
   /**
-   * Overriding equals and hashCode to get correct comparison between Location objects.
+   * Overriding equals and hashCode to get correct comparison between Location
+   * objects.
    */
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
     Location location = (Location) o;
     return x == location.x && y == location.y;
   }

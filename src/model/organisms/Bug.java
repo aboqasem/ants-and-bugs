@@ -11,12 +11,14 @@ import static rules.MovementRules.allowedMove;
 import static rules.MovementRules.inWorldCoordinates;
 
 /**
- * [Factory Pattern]
- * Subclass of organism.
+ * [Factory Pattern] Subclass of organism.
  */
 public class Bug extends Organism implements Breeding, Starving, Eating {
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Initializes every bug with its information.
@@ -37,7 +39,10 @@ public class Bug extends Organism implements Breeding, Starving, Eating {
     directions = directions_factory.getDirections(BUG_DIRECTION);
   }
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Movement function.
@@ -48,21 +53,20 @@ public class Bug extends Organism implements Breeding, Starving, Eating {
     int next_x, next_y;
     /* Shuffling directions to go in a random way. */
     directions.shuffle();
-        
-        /*
-            Iterating over directions and checking for prey cells to go to.
-            Applying our edits on a copy of Organisms to not mess up the iteration on
-            the available Organisms.
-            Priority to iterate looking for preys then for empty place.
-         */
-    if (eat(world, organisms, "Ant")) return;
-        
-        /*
-            Iterating over directions and checking for empty cells to go to after
-            checking for preys.
-            Applying our edits on a copy of Organisms to not mess up the iteration on
-            the available Organisms.
-         */
+
+    /*
+     * Iterating over directions and checking for prey cells to go to. Applying our
+     * edits on a copy of Organisms to not mess up the iteration on the available
+     * Organisms. Priority to iterate looking for preys then for empty place.
+     */
+    if (eat(world, organisms, "Ant"))
+      return;
+
+    /*
+     * Iterating over directions and checking for empty cells to go to after
+     * checking for preys. Applying our edits on a copy of Organisms to not mess up
+     * the iteration on the available Organisms.
+     */
     for (Location direction_to_go : directions) {
       next_x = location.x + direction_to_go.x;
       next_y = location.y + direction_to_go.y;
@@ -91,7 +95,10 @@ public class Bug extends Organism implements Breeding, Starving, Eating {
     }
   }
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Eat function.
@@ -132,7 +139,10 @@ public class Bug extends Organism implements Breeding, Starving, Eating {
     return false;
   }
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Breed function.
@@ -149,9 +159,11 @@ public class Bug extends Organism implements Breeding, Starving, Eating {
       next_y = location.y + place_to_breed.y;
       /* If inside world and the cell to breed in is empty, */
       if (inWorldCoordinates(next_x, next_y) && allowedMove(world, next_x, next_y, "")) {
-        /* Add a bug beside bugs inside the ArrayList to keep priority for each Organism. */
-        organisms.add(NUMBER_OF_BUGS, organism_factory.getOrganism(OrganismType.BUG, new Location(next_x,
-            next_y)));
+        /*
+         * Add a bug beside bugs inside the ArrayList to keep priority for each
+         * Organism.
+         */
+        organisms.add(NUMBER_OF_BUGS, organism_factory.getOrganism(OrganismType.BUG, new Location(next_x, next_y)));
         /* Increase number of bugs. */
         ++NUMBER_OF_BUGS;
         break;
@@ -161,7 +173,10 @@ public class Bug extends Organism implements Breeding, Starving, Eating {
     breed_counter = BUG_BREED;
   }
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Starve function.
@@ -173,5 +188,8 @@ public class Bug extends Organism implements Breeding, Starving, Eating {
     /* Decrease number of bugs. */
     --NUMBER_OF_BUGS;
   }
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 }

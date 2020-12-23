@@ -6,12 +6,16 @@ import java.awt.*;
 import java.io.File;
 
 /**
- * (The static members are to ease changing properties, they can be hard coded to reduce common coupling.)
- * Base data class contains world and GUI properties.
+ * (The static members are to ease changing properties, they can be hard coded
+ * to reduce common coupling.) Base data class contains world and GUI
+ * properties.
  */
 public class Properties {
 
-  /* - - - - - - - - - - - - - - - - - - - - Ant - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - Ant - - - - - - - - - - - - - - - - -
+   * - - - - - - -
+   */
   /**
    * Direction data.
    */
@@ -31,8 +35,10 @@ public class Properties {
    */
   public static final File ANT_FILE = new File("src/Image/Ant.png");
 
-
-  /* - - - - - - - - - - - - - - - - - - - - Bug - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - Bug - - - - - - - - - - - - - - - - -
+   * - - - - - - -
+   */
   /**
    * Direction data.
    */
@@ -53,8 +59,10 @@ public class Properties {
    */
   public static final File BUG_FILE = new File("src/Image/Bug.png");
 
-
-  /* - - - - - - - - - - - - - - - - - - -  World  - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - World - - - - - - - - - - - - - - - - -
+   * - - - - - -
+   */
   /**
    * 2D world width and height.
    */
@@ -62,8 +70,11 @@ public class Properties {
   /**
    * Auto timer speed in seconds.
    */
-  public static final double TIMER_SPEED = 0;
-  /* - - - - - - - - - - - - - - - - - - - - GUI - - - - - - - - - - - - - - - - - - - - - - - - */
+  public static final double TIMER_SPEED = 0.2;
+  /*
+   * - - - - - - - - - - - - - - - - - - - - GUI - - - - - - - - - - - - - - - - -
+   * - - - - - - -
+   */
   /**
    * MenuBar height.
    */
@@ -81,7 +92,10 @@ public class Properties {
    * Button dimension.
    */
   public static final Dimension BUTTON_DIMENSION = new Dimension(75, MENU_HEIGHT - 7);
-  /* - - - - - - - - - - - - - - - - - - - General - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - General - - - - - - - - - - - - - - - -
+   * - - - - - - -
+   */
   /**
    * 2D world height (we want the world to be square-like).
    */

@@ -21,8 +21,10 @@ public class MovementRules {
    * Checks if an allowed move.
    */
   public static boolean allowedMove(Organism[][] world, int x, int y, String prey) {
-    if (prey.isBlank()) return world[y][x] == null;
-    else if (!prey.isBlank()) return world[y][x] != null && world[y][x].getType().equals(prey);
+    if (prey.isBlank())
+      return world[y][x] == null;
+    else if (!prey.isBlank())
+      return world[y][x] != null && world[y][x].getType().equals(prey);
     return false;
   }
 }

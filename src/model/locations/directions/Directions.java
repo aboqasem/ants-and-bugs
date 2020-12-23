@@ -11,7 +11,7 @@ import java.util.Collections;
  */
 public abstract class Directions extends ArrayList<Location> {
   /*
-      Shuffles the array to get random indices.
+   * Shuffles the array to get random indices.
    */
   public void shuffle() {
     Collections.shuffle(this);

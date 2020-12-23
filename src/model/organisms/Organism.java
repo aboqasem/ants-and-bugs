@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * [Factory Pattern]
- * Parent class of every organism.
+ * [Factory Pattern] Parent class of every organism.
  */
 public abstract class Organism {
   /**
@@ -70,28 +69,31 @@ public abstract class Organism {
     return location;
   }
 
-
   /**
    * Overrides toString to give description of the current organism.
    */
   @Override
   public String toString() {
     if (breeds && starves)
-      return "<html><font color=" + color + ">This " + type.toLowerCase() + " will breed in " + breed_counter + ", and " +
-          "will" + " starve " + "in " + starve_counter + ".</font></html>";
+      return "<html><font color=" + color + ">This " + type.toLowerCase() + " will breed in " + breed_counter + ", and "
+          + "will" + " starve " + "in " + starve_counter + ".</font></html>";
     else if (breeds)
-      return "<html><font color=" + color + ">This " + type.toLowerCase() + " will breed in " + breed_counter + ".</font" +
-          "></html>";
-    else return "<html><font color=" + color + ">" + type + ".</font></html>";
+      return "<html><font color=" + color + ">This " + type.toLowerCase() + " will breed in " + breed_counter
+          + ".</font" + "></html>";
+    else
+      return "<html><font color=" + color + ">" + type + ".</font></html>";
   }
 
   /**
-   * Overriding equals and hashCode to get correct comparison between Organism objects.
+   * Overriding equals and hashCode to get correct comparison between Organism
+   * objects.
    */
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
     Organism organism = (Organism) o;
     return location.equals(organism.location);
   }

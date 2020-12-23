@@ -11,7 +11,7 @@ public class StraightDirections extends Directions {
   private static final StraightDirections straight_directions = new StraightDirections();
 
   /*
-      Initializes list of coordinates allowed for moving straight.
+   * Initializes list of coordinates allowed for moving straight.
    */
   private StraightDirections() {
     this.add(new Location(0, -1));
@@ -21,7 +21,7 @@ public class StraightDirections extends Directions {
   }
 
   /*
-      Returns the only object of StraightDirections.
+   * Returns the only object of StraightDirections.
    */
   public static StraightDirections getInstance() {
     return straight_directions;

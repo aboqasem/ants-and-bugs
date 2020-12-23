@@ -9,8 +9,7 @@ import java.awt.*;
 import static properties.Properties.*;
 
 /**
- * [MVC Pattern, Singleton Pattern]
- * Single view of the single World.
+ * [MVC Pattern, Singleton Pattern] Single view of the single World.
  */
 public class WorldView {
   /**
@@ -45,10 +44,10 @@ public class WorldView {
   public void updateView(Organism[][] organisms, JPanel world_container) {
     /* Removes everything from the world_container. */
     world_container.removeAll();
-        
-        /*
-            Sets the new labels according to organisms in their location.
-         */
+
+    /*
+     * Sets the new labels according to organisms in their location.
+     */
     for (int y = 0; y < WORLD_HEIGHT; ++y) {
       for (int x = 0; x < WORLD_WIDTH; ++x) {
         world[y][x] = new JLabel();

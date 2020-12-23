@@ -6,8 +6,8 @@ import java.io.IOException;
 import static properties.Properties.*;
 
 /**
- * [Factory Pattern, Singleton Pattern]
- * Subclass of Image, has the single object of BugImage.
+ * [Factory Pattern, Singleton Pattern] Subclass of Image, has the single object
+ * of BugImage.
  */
 public class BugImage extends Image {
   /**

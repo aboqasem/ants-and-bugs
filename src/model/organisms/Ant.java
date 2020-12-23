@@ -11,12 +11,14 @@ import static rules.MovementRules.allowedMove;
 import static rules.MovementRules.inWorldCoordinates;
 
 /**
- * [Factory Pattern]
- * Subclass of organism.
+ * [Factory Pattern] Subclass of organism.
  */
 public class Ant extends Organism implements Breeding {
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Initializes every ant with its information.
@@ -35,7 +37,10 @@ public class Ant extends Organism implements Breeding {
     directions = directions_factory.getDirections(ANT_DIRECTION);
   }
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Movement function.
@@ -46,12 +51,12 @@ public class Ant extends Organism implements Breeding {
     int next_x, next_y;
     /* Shuffling directions to step in a random way. */
     directions.shuffle();
-        
-        /*
-            Iterating over directions and checking for empty cells to go to.
-            Applying our edits on a copy of Organisms to not mess up the iteration on
-            the available Organisms.
-         */
+
+    /*
+     * Iterating over directions and checking for empty cells to go to. Applying our
+     * edits on a copy of Organisms to not mess up the iteration on the available
+     * Organisms.
+     */
     for (Location direction_to_go : directions) {
       next_x = location.x + direction_to_go.x;
       next_y = location.y + direction_to_go.y;
@@ -76,7 +81,10 @@ public class Ant extends Organism implements Breeding {
     }
   }
 
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 
   /**
    * Breed function.
@@ -93,9 +101,12 @@ public class Ant extends Organism implements Breeding {
       next_y = location.y + place_to_breed.y;
       /* If inside world and the cell to breed in is empty, */
       if (inWorldCoordinates(next_x, next_y) && allowedMove(world, next_x, next_y, "")) {
-        /* Add an ant beside ants inside the ArrayList to keep priority for each Organism. */
-        organisms.add(NUMBER_OF_BUGS + NUMBER_OF_ANTS, organism_factory.getOrganism(OrganismType.ANT,
-            new Location(next_x, next_y)));
+        /*
+         * Add an ant beside ants inside the ArrayList to keep priority for each
+         * Organism.
+         */
+        organisms.add(NUMBER_OF_BUGS + NUMBER_OF_ANTS,
+            organism_factory.getOrganism(OrganismType.ANT, new Location(next_x, next_y)));
         /* Increase number of ants. */
         ++NUMBER_OF_ANTS;
         break;
@@ -104,5 +115,8 @@ public class Ant extends Organism implements Breeding {
     /* Reset breed_counter to the default breed after breeding. */
     breed_counter = ANT_BREED;
   }
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  /*
+   * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   * - - - - - - - - -
+   */
 }

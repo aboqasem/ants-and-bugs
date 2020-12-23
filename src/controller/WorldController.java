@@ -8,8 +8,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * [MVC Pattern, Singleton Pattern]
- * Single controller of the single world.
+ * [MVC Pattern, Singleton Pattern] Single controller of the single world.
  */
 public class WorldController {
   /* Single object of the WorldController to be created once. */

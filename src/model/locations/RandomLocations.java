@@ -6,8 +6,8 @@ import java.util.Random;
 import static properties.Properties.*;
 
 /**
- * [Singleton Pattern]
- * Initial set of unique random locations to set them into each organism.
+ * [Singleton Pattern] Initial set of unique random locations to set them into
+ * each organism.
  */
 public class RandomLocations {
   /**
@@ -27,11 +27,11 @@ public class RandomLocations {
     var set = new HashSet<Location>();
     /* Random numbers generator. */
     var rand = new Random();
-        
-        /*
-            While locations are less than the organism total number,
-            continue creating other locations.
-         */
+
+    /*
+     * While locations are less than the organism total number, continue creating
+     * other locations.
+     */
     while (set.size() < NUMBER_OF_ORGANISMS) {
       int x = rand.nextInt(WORLD_WIDTH);
       int y = rand.nextInt(WORLD_HEIGHT);

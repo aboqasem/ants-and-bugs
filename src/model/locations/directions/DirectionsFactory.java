@@ -6,10 +6,11 @@ package model.locations.directions;
  */
 public class DirectionsFactory {
   /*
-      Produces directions using type.
+   * Produces directions using type.
    */
   public Directions getDirections(DirectionType type) {
-    if (type.equals(DirectionType.STRAIGHT)) return StraightDirections.getInstance();
+    if (type.equals(DirectionType.STRAIGHT))
+      return StraightDirections.getInstance();
     return null;
   }
 }

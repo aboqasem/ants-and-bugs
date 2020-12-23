@@ -9,8 +9,7 @@ import static properties.Properties.WORLD_HEIGHT;
 import static properties.Properties.WORLD_WIDTH;
 
 /**
- * [MVC Pattern, Singleton Pattern]
- * Model of the single World.
+ * [MVC Pattern, Singleton Pattern] Model of the single World.
  */
 public class World {
   /**
@@ -56,7 +55,10 @@ public class World {
         world[y][x] = null;
       }
     }
-    /* Setting every location in the world to its Organism. If no organism, it remains null. */
+    /*
+     * Setting every location in the world to its Organism. If no organism, it
+     * remains null.
+     */
     for (Organism organism : organisms) {
       world[organism.getLocation().y][organism.getLocation().x] = organism;
     }
