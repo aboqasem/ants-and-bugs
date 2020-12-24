@@ -11,11 +11,17 @@ import java.util.ArrayList;
  * [MVC Pattern, Singleton Pattern] Single controller of the single world.
  */
 public class WorldController {
-  /* Single object of the WorldController to be created once. */
+  /**
+   * Single object of the WorldController to be created once.
+   */
   private static final WorldController world_controller = new WorldController();
-  /* The only object of World. */
+  /**
+   * The only object of World.
+   */
   private final World world = World.getInstance();
-  /* The only object of WorldView. */
+  /**
+   * The only object of WorldView.
+   */
   private final WorldView world_view = WorldView.getInstance();
 
   /**
