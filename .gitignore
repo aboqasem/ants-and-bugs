@@ -27,6 +27,7 @@
 *.sqlite
 *.iml
 .idea/
+.vscode/
 out/
 
 # OS generated files #
