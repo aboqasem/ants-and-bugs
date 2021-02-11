@@ -1,7 +1,7 @@
 # Ants and Bugs Simulator
 
 <p align="center">
-  <img src="https://media.giphy.com/media/5gEN3M678ks2f5TCMD/giphy.gif">
+  <img src="docs/images/hero.gif" height="250">
 </p>
 
 ## Compile and Run
